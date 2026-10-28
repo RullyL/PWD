@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact // My Sanctuary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-dot"></span> MY.SANCTUARY
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="games.html" class="nav-link">Gaming</a></li>
+          <li><a href="books.html" class="nav-link">Reading</a></li>
+          <li><a href="movies.html" class="nav-link">Cinema</a></li>
+          <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="page-header">
+        <span class="badge">Drop Pesan</span>
+        <h1>Punya Rekomendasi Keren?</h1>
+        <p>Punya game seru yang wajib gue coba, buku yang ngubah cara pandang lo, atau film dengan ending mindblowing? Kasih tau gue di bawah ya!</p>
+      </div>
+
+      <div class="contact-form">
+        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mantap! Rekomendasi atau pesan lo udah terkirim.');">
+          <div class="form-group">
+            <label for="name">Nama Lo</label>
+            <input type="text" id="name" class="form-control" placeholder="Tulis nama atau username lo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" class="form-control" placeholder="email@contoh.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Mau Ngasih Rekomendasi Apa?</label>
+            <select id="topic" class="form-control">
+              <option value="game">Rekomendasi Game Asik</option>
+              <option value="book">Buku Bacaan Bagus</option>
+              <option value="movie">Film / Serial Keren</option>
+              <option value="other">Sekadar Ngobrol Santai</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Pesan / Judul Rekomendasi</label>
+            <textarea id="message" class="form-control" placeholder="Tulis rekomendasi judul, alasan kenapa lo suka, atau unek-unek santai lo di sini..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            Kirim Rekomendasi 
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 My Sanctuary</p>
+    </div>
+  </footer>
+
+</body>
+</html>

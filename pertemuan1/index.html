@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokoku - Home & Contact</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        .contact-title {
+            color: #fbc2eb;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #c0b0d8;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #c0b0d8;
+            cursor: pointer;
+        }
+
+        .form-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .form-table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid rgba(161, 140, 209, 0.15);
+            vertical-align: middle;
+        }
+
+        .form-table td:first-child {
+            width: 140px;
+            font-weight: 600;
+            color: #a090c0;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        #contact-section {
+            margin-top: 32px;
+        }
+
+        #form-wrapper {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(161, 140, 209, 0.2);
+        }
+
+        .form-table tr:hover td {
+            background: rgba(161, 140, 209, 0.07);
+            transition: background 0.2s ease;
+        }
+
+        .contact-title::after {
+            content: ' 📋';
+        }
+
+        input[name="nama"] {
+            border-color: rgba(161, 140, 209, 0.5);
+        }
+
+        input[name="password"] {
+            border-color: rgba(251, 194, 235, 0.5);
+        }
+
+        #form-wrapper>form {
+            padding: 0;
+            background: none;
+            border: none;
+        }
+
+        .contact-title~p {
+            color: #9090b0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section"
+            style="background: linear-gradient(135deg, rgba(161,140,209,0.12), rgba(251,194,235,0.08)); border-color: rgba(161,140,209,0.3);">
+            <h1 id="main-title">🛍️ Tokoku</h1>
+            <p class="subtitle" style="color: #c0b0d8; font-size: 1rem;">Toko Online Terpercaya — Belanja Mudah &
+                Menyenangkan</p>
+        </div>
+
+        <nav class="navbar">
+            <a href="./index.html" id="nav-home" class="nav-link"
+                style="box-shadow: 0 4px 15px rgba(161,140,209,0.3);">HOME</a>
+            <span class="nav-separator">|</span>
+            <a href="./product.html" class="nav-link">PRODUCT</a>
+            <span class="nav-separator">|</span>
+            <a href="./about.html" class="nav-link">ABOUT</a>
+            <span class="nav-separator">|</span>
+            <a href="#contact-section" class="nav-link">CONTACT</a>
+        </nav>
+
+        <div class="card" style="margin-bottom: 32px;">
+            <h2>Selamat Datang</h2>
+            <p>Ini adalah halaman utama <strong style="color: #fbc2eb;">Tokoku</strong> — temukan berbagai produk
+                pilihan berkualitas dengan harga terjangkau. Belanja aman, nyaman, dan terpercaya!</p>
+            <p>Gunakan navigasi di atas untuk menjelajahi halaman <em style="color: #a18cd1;">Product</em> dan
+                mengetahui lebih lanjut tentang kami di halaman <em style="color: #a18cd1;">About</em>.</p>
+        </div>
+
+        <section id="contact-section">
+            <p class="contact-title">Form Kontak & Registrasi</p>
+            <p>Isi formulir di bawah ini untuk menghubungi kami atau mendaftar sebagai member.</p>
+
+            <div id="form-wrapper">
+                <form id="contact-form" action="" method="post">
+                    <table class="form-table">
+                        <tr>
+                            <td class="form-label">Nama</td>
+                            <td>
+                                <input class="input-field" type="text" name="nama"
+                                    placeholder="Masukkan nama lengkap...">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Password</td>
+                            <td>
+                                <input class="input-field" type="password" name="password"
+                                    placeholder="Masukkan password...">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Jenis Kelamin</td>
+                            <td>
+                                <div class="radio-group">
+                                    <label class="radio-item">
+                                        <input type="radio" name="jk" value="Laki-laki"> Laki-laki
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="jk" value="Perempuan"> Perempuan
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Hobi</td>
+                            <td>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="hobi" value="Membaca Buku"> Membaca
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="hobi" value="Menulis"> Menulis
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="hobi" value="Memancing"> Memancing
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Asal Kota</td>
+                            <td>
+                                <select name="kota">
+                                    <option value="">-- Pilih Kota --</option>
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                    <option value="Bali">Bali</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label">Komentar</td>
+                            <td>
+                                <textarea name="komentar" rows="5"
+                                    placeholder="Tulis komentar atau pesan Anda di sini..."></textarea>
+                            </td>
+                        </tr>
+                        <tr id="submit-section">
+                            <td></td>
+                            <td>
+                                <input type="submit" value="✉️ Kirim Pesan"
+                                    style="letter-spacing: 2px; font-size: 0.9rem;">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Tokoku &copy; 2026 — Semua Hak Dilindungi
+        </footer>
+    </div>
+</body>
+
+</html>

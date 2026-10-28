@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokoku - About</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #1a1a3e, #24243e);
+        }
+
+        .about-intro {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .stat-box {
+            background: rgba(161, 140, 209, 0.12);
+            border: 1px solid rgba(161, 140, 209, 0.3);
+            border-radius: 14px;
+            padding: 20px 28px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #9090b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .team-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 14px auto;
+        }
+
+        .team-name {
+            font-weight: 700;
+            color: #d0c0f0;
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            font-size: 0.8rem;
+            color: #9090b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-city {
+            font-size: 0.85rem;
+            color: #a18cd1;
+            margin-top: 6px;
+        }
+
+        .about-table-wrap {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid rgba(161, 140, 209, 0.2);
+        }
+
+        #about-hero {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        #team-section {
+            margin-top: 36px;
+        }
+
+        a[href="./index.html"] {
+            color: #fbc2eb;
+            font-weight: 700;
+        }
+
+        .team-card:hover .team-avatar {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stat-number::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #fbc2eb;
+        }
+
+        .team-name::before {
+            content: '✦ ';
+            color: rgba(161, 140, 209, 0.5);
+            font-size: 0.7em;
+        }
+
+        .about-intro p {
+            color: #b0a0c8;
+        }
+
+        .card>h2 {
+            margin-bottom: 16px;
+        }
+
+        .stat-box+.stat-box {
+            border-left: none;
+        }
+
+        .team-name~.team-city {
+            border-top: 1px solid rgba(161, 140, 209, 0.1);
+            padding-top: 6px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section"
+            style="background: linear-gradient(135deg, rgba(251,194,235,0.1), rgba(161,140,209,0.08)); border-color: rgba(251,194,235,0.3);">
+            <div id="about-hero">
+                <span style="font-size: 3rem; filter: drop-shadow(0 0 12px rgba(251,194,235,0.6));">🏢</span>
+                <div>
+                    <h1 id="main-title"
+                        style="-webkit-text-fill-color: unset; background: linear-gradient(90deg, #fbc2eb, #a18cd1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        ABOUT US</h1>
+                    <p class="subtitle" style="color: #d0c0e0; font-size: 0.95rem;">Mengenal Tokoku Lebih Dekat</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="./index.html" class="nav-link">HOME</a>
+            <span class="nav-separator">|</span>
+            <a href="./product.html" class="nav-link">PRODUCT</a>
+            <span class="nav-separator">|</span>
+            <a href="./about.html" id="nav-home" class="nav-link"
+                style="box-shadow: 0 4px 15px rgba(251,194,235,0.3);">ABOUT</a>
+            <span class="nav-separator">|</span>
+            <a href="./index.html#contact-section" class="nav-link">CONTACT</a>
+        </nav>
+
+        <div class="card">
+            <h2>Tentang Kami</h2>
+            <div class="about-intro">
+                <div class="about-text">
+                    <p>Tokoku adalah platform belanja online yang hadir untuk memudahkan masyarakat Indonesia
+                        mendapatkan berbagai produk pilihan dengan harga terjangkau dan kualitas terjamin.</p>
+                    <p>Didirikan sejak 2020, kami telah melayani ribuan pelanggan setia di seluruh nusantara dengan
+                        komitmen penuh pada kepuasan pelanggan.</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="stat-box">
+                        <div class="stat-number">10K</div>
+                        <div class="stat-label">Pelanggan</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">500</div>
+                        <div class="stat-label">Produk</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Tahun</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="team-section">
+            <div class="card">
+                <h2>Data Tim Kami</h2>
+                <div class="about-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px; text-align: center;">No</th>
+                                <th>Nama</th>
+                                <th>Jabatan</th>
+                                <th>Alamat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center; color: #a18cd1; font-weight: 700;">1</td>
+                                <td>John Doe</td>
+                                <td><span class="badge">CEO</span></td>
+                                <td>Bandung</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; color: #a18cd1; font-weight: 700;">2</td>
+                                <td>Jane Smith</td>
+                                <td><span class="badge">CTO</span></td>
+                                <td>Jakarta</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; color: #a18cd1; font-weight: 700;">3</td>
+                                <td>Budi Santoso</td>
+                                <td><span class="badge">Designer</span></td>
+                                <td>Yogyakarta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <h2>Kenali Tim Kami</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💼</div>
+                        <div class="team-name">John Doe</div>
+                        <div class="team-role">CEO & Founder</div>
+                        <div class="team-city">📍 Bandung</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👩‍💻</div>
+                        <div class="team-name">Jane Smith</div>
+                        <div class="team-role">CTO</div>
+                        <div class="team-city">📍 Jakarta</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">🎨</div>
+                        <div class="team-name">Budi Santoso</div>
+                        <div class="team-role">Lead Designer</div>
+                        <div class="team-city">📍 Yogyakarta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Tokoku &copy; 2026 — Tim Kami Siap Melayani Anda
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokoku - Product</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #1e1040, #24243e);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(161, 140, 209, 0.3);
+            color: #b0a0d0;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn-active {
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            color: #1a1a2e;
+            border-color: transparent;
+        }
+
+        .product-emoji {
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-stock {
+            font-size: 0.75rem;
+            color: #70c070;
+            margin-top: 4px;
+        }
+
+        .product-stock.habis {
+            color: #c07070;
+        }
+
+        .promo-banner {
+            background: linear-gradient(90deg, rgba(161, 140, 209, 0.2), rgba(251, 194, 235, 0.15), rgba(161, 140, 209, 0.2));
+            border: 1px solid rgba(251, 194, 235, 0.3);
+            border-radius: 14px;
+            padding: 20px 28px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .promo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-detail {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: rgba(161, 140, 209, 0.15);
+            border: 1px solid rgba(161, 140, 209, 0.4);
+            border-radius: 20px;
+            color: #b0a0d0;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+        }
+
+        #product-hero {
+            text-align: center;
+        }
+
+        #product-list {
+            margin-top: 8px;
+        }
+
+        #featured-badge {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #1a1a2e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        button[class="filter-btn filter-btn-active"] {
+            box-shadow: 0 4px 16px rgba(161, 140, 209, 0.35);
+        }
+
+        a[class="btn-detail"] {
+            display: inline-block;
+        }
+
+        .filter-btn:hover {
+            background: rgba(161, 140, 209, 0.2);
+            color: #fbc2eb;
+            border-color: rgba(161, 140, 209, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .btn-detail:hover {
+            background: rgba(161, 140, 209, 0.25);
+            color: #fbc2eb;
+            border-color: rgba(251, 194, 235, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .product-card:nth-child(1) {
+            border-top: 3px solid #a18cd1;
+        }
+
+        .product-card:nth-child(2) {
+            border-top: 3px solid #fbc2eb;
+        }
+
+        .product-card:nth-child(3) {
+            border-top: 3px solid #84fab0;
+        }
+
+        .product-card:nth-child(4) {
+            border-top: 3px solid #f093fb;
+        }
+
+        .product-card:last-child {
+            border-top: 3px solid #ffeaa7;
+        }
+
+        .product-name::after {
+            content: ' ✨';
+            font-size: 0.85em;
+        }
+
+        .promo-text::before {
+            content: '🔥 ';
+        }
+
+        .promo-text::after {
+            content: ' 🔥';
+        }
+
+        .product-card .product-emoji {
+            transition: transform 0.3s ease;
+        }
+
+        .product-grid>.product-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name+.product-price {
+            margin-top: 2px;
+        }
+
+        .product-price~.product-stock {
+            border-top: 1px solid rgba(161, 140, 209, 0.1);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
+        .product-card:hover .product-emoji {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .product-card:hover .btn-detail {
+            background: rgba(161, 140, 209, 0.2);
+            color: #fbc2eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section"
+            style="background: linear-gradient(135deg, rgba(132,250,176,0.08), rgba(161,140,209,0.1)); border-color: rgba(132,250,176,0.25);">
+            <div id="product-hero">
+                <span
+                    style="font-size: 3rem; display: block; margin-bottom: 10px; filter: drop-shadow(0 0 16px rgba(161,140,209,0.7));">🛒</span>
+                <h1 id="main-title">PRODUK KAMI</h1>
+                <p class="subtitle" style="color: #c0d0c0;">Temukan Produk Pilihan Berkualitas Tinggi</p>
+                <div id="featured-badge" style="margin-top: 12px;">Top Picks 2026</div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="./index.html" class="nav-link">HOME</a>
+            <span class="nav-separator">|</span>
+            <a href="./product.html" id="nav-home" class="nav-link"
+                style="box-shadow: 0 4px 15px rgba(132,250,176,0.2); background: linear-gradient(135deg, #84fab0, #8fd3f4); color: #1a1a2e;">PRODUCT</a>
+            <span class="nav-separator">|</span>
+            <a href="./about.html" class="nav-link">ABOUT</a>
+            <span class="nav-separator">|</span>
+            <a href="./index.html#contact-section" class="nav-link">CONTACT</a>
+        </nav>
+
+        <div class="promo-banner">
+            <div class="promo-text">Promo Spesial! Diskon hingga 50% untuk semua produk pilihan</div>
+            <p style="color: #b0a0c8; font-size: 0.85rem; margin-top: 6px;">*Berlaku hingga akhir bulan. Syarat dan
+                ketentuan berlaku.</p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+            <h2 style="margin-bottom: 16px;">Katalog Produk</h2>
+            <div class="filter-bar">
+                <button class="filter-btn filter-btn-active">Semua</button>
+                <button class="filter-btn">Elektronik</button>
+                <button class="filter-btn">Fashion</button>
+                <button class="filter-btn">Aksesoris</button>
+                <button class="filter-btn">Rumah Tangga</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-list">
+            <div class="product-card">
+                <span class="product-emoji">💻</span>
+                <div class="product-info">
+                    <span class="badge" style="margin-bottom: 8px; display: inline-block;">Elektronik</span>
+                    <div class="product-name">Laptop Gaming Pro</div>
+                    <div class="product-price" style="font-size: 1.05rem;">Rp 15.000.000</div>
+                    <div class="product-stock">✅ Stok Tersedia (12 unit)</div>
+                    <a href="#" class="btn-detail">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-emoji">👟</span>
+                <div class="product-info">
+                    <span class="badge"
+                        style="margin-bottom: 8px; display: inline-block; background: linear-gradient(135deg, #84fab0, #08aeea); color: #1a1a2e;">Fashion</span>
+                    <div class="product-name">Sneakers Limited</div>
+                    <div class="product-price">Rp 850.000</div>
+                    <div class="product-stock">✅ Stok Tersedia (30 unit)</div>
+                    <a href="#" class="btn-detail">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-emoji">🎧</span>
+                <div class="product-info">
+                    <span class="badge" style="margin-bottom: 8px; display: inline-block;">Aksesoris</span>
+                    <div class="product-name">Headphone Wireless</div>
+                    <div class="product-price">Rp 1.200.000</div>
+                    <div class="product-stock">✅ Stok Tersedia (25 unit)</div>
+                    <a href="#" class="btn-detail">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-emoji">📱</span>
+                <div class="product-info">
+                    <span class="badge"
+                        style="margin-bottom: 8px; display: inline-block; background: linear-gradient(135deg, #f093fb, #f5576c);">Elektronik</span>
+                    <div class="product-name">Smartphone Ultra</div>
+                    <div class="product-price" style="text-decoration: line-through; opacity: 0.5; font-size: 0.85rem;">
+                        Rp 12.000.000</div>
+                    <div class="product-price" style="color: #84fab0;">Rp 9.500.000</div>
+                    <div class="product-stock habis">❌ Stok Habis</div>
+                    <a href="#" class="btn-detail">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-emoji">🏠</span>
+                <div class="product-info">
+                    <span class="badge"
+                        style="margin-bottom: 8px; display: inline-block; background: linear-gradient(135deg, #ffeaa7, #fdcb6e); color: #1a1a2e;">Rumah
+                        Tangga</span>
+                    <div class="product-name">Dekorasi Premium</div>
+                    <div class="product-price">Rp 350.000</div>
+                    <div class="product-stock">✅ Stok Tersedia (50 unit)</div>
+                    <a href="#" class="btn-detail">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer" style="margin-top: 48px;">
+            Tokoku &copy; 2026 — Produk Berkualitas untuk Anda
+        </footer>
+    </div>
+</body>
+
+</html>
