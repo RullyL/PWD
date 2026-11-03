@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - JS</title>
+</head>
+
+<body>
+    <!-- Inner HTML -->
+    <p id="demo"></p>
+
+    <!-- Write -->
+    <h1 id="ganti">Hallo</h1>
+    <button type="button" onclick="document.write(5 + 6)">Click</button>
+    <button type="button" onclick='change()'>Change</button>
+    <button type="button" onclick="toggleTema()">Ganti Tema</button>
+
+    <!-- Alert -->
+    <button type="button" onclick="alert('Jangan diklik lagi')">Alert</button>
+    <button type="button" onclick="confirm('Jangan diklik lagi')">Confirm</button>
+    <button type="button" onclick="prompt('Masukkan pesan:')">Prompt</button>
+
+    <!-- ///////////// -->
+    <hr />
+
+    <p>Nama: <input type="text" id="nama" /></p>
+    <p>Umur: <input type="number" id="umur" /></p>
+
+    <button type="button" onclick="kirim()">Kirim</button>
+    <button type="button" onclick="resetForm()">Reset</button>
+    <p id="hasil"></p>
+
+    <hr />
+    <h3>Counter Sederhana</h3>
+    <button type="button" onclick="ubahCounter(-1)">-</button>
+    <span id="nilai-counter" style="margin: 0 10px; font-weight: bold;">0</span>
+    <button type="button" onclick="ubahCounter(1)">+</button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
